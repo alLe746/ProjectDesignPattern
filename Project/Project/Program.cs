@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Project
 {
@@ -6,10 +7,10 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            Ex1();
+            Exo2();
             Console.ReadKey();
         }
-        static void Ex1()
+        static void Exo1()
         {
             Node<string> last = new Node<string>("bonjour", null);
             Node<string> mid = new Node<string>("bye", last);
@@ -20,7 +21,15 @@ namespace Project
             {
                 Console.WriteLine(s.Content);
             }
-            
+        }
+        static void Exo2()
+        {
+            Ex2 ex2 = new Ex2();
+            List<(string, int)> retour = ex2.Run();
+            foreach((string,int) value in retour)
+            {
+                Console.WriteLine(value.Item1 + " with value: " + value.Item2);
+            }
         }
     }
 }
