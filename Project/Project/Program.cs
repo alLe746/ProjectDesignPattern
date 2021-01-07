@@ -7,19 +7,37 @@ namespace Project
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("1: First Example");
+            Exo1();
+            Console.WriteLine("1: Second Example");
+            Exo1Bis();
+            Console.WriteLine("2:");
             Exo2();
             Console.ReadKey();
         }
         static void Exo1()
         {
-            Node<string> last = new Node<string>("bonjour", null);
-            Node<string> mid = new Node<string>("bye", last);
-            Node<string> first = new Node<string>("hello", mid);
+            Node<string> first = new Node<string>("hello", null);
             CustomQueue<string> customQueue = new CustomQueue<string>(first);
-            customQueue.EnQueue("coucou");
+            customQueue.EnQueue("bye");
+            customQueue.EnQueue("hello again");
+            Console.WriteLine("first Dequeue : " + customQueue.DeQueue().Content);
+            customQueue.EnQueue("bye again");
             foreach(Node<string> s in customQueue)
             {
-                Console.WriteLine(s.Content);
+                Console.WriteLine("in foreach loop: " + s.Content);
+            }
+        }
+        static void Exo1Bis()
+        {
+            CustomQueue<int> customQueue = new CustomQueue<int>();
+            customQueue.EnQueue(1);
+            customQueue.EnQueue(6);
+            customQueue.EnQueue(8);
+            customQueue.EnQueue(3);
+            foreach (Node<int> s in customQueue)
+            {
+                Console.WriteLine("in foreach loop: " + s.Content);
             }
         }
         static void Exo2()

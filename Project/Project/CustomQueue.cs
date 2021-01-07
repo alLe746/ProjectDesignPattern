@@ -14,6 +14,10 @@ namespace Project
             this.firstNode = firstNode;
         }
 
+        public CustomQueue()
+        {
+        }
+
         public Node<T> FirstNode { get => firstNode; set => firstNode = value; }
         /// <summary>
         /// Method for accessing the desired object

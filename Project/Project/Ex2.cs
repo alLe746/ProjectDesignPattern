@@ -39,37 +39,21 @@ namespace Project
                   
                   Parallel.ForEach(classifiedlist, (CurrentKey) =>
                    {
-                       lock(map)
-                       {
-                           if (map.ContainsKey(CurrentKey.Key))
-                           {
-                           map[CurrentKey.Key].Add(CurrentKey.Value);
-                           }
-                       else
-                       {
-                           map.Add(CurrentKey.Key, new List<int> { CurrentKey.Value });
-                       }
-                       }
+                        lock(map)
+                        {
+                            if (map.ContainsKey(CurrentKey.Key))
+                            {
+                                map[CurrentKey.Key].Add(CurrentKey.Value);
+                            }
+                            else
+                            {
+                                map.Add(CurrentKey.Key, new List<int> { CurrentKey.Value });
+                            }
+                        }
                        
                    });
                   
               });
-            /*
-            foreach(Dictionary<string,int> dict in valuePairs)
-            {
-                foreach(KeyValuePair<string,int> CurrentKey in dict)
-                {
-                    if (map.ContainsKey(CurrentKey.Key))
-                    {
-                        map[CurrentKey.Key].Add(CurrentKey.Value);
-                    }
-                    else
-                    {
-                        map.Add(CurrentKey.Key, new List<int> { CurrentKey.Value });
-                    }
-                }
-            }
-            */
         }
         private void Reducing()
         {
