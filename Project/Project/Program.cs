@@ -13,6 +13,8 @@ namespace Project
             Exo1Bis();
             Console.WriteLine("2:");
             Exo2();
+            Console.WriteLine("3:");
+            Exo3();
             Console.ReadKey();
         }
         static void Exo1()
@@ -48,6 +50,18 @@ namespace Project
             {
                 Console.WriteLine(value.Item1 + " with value: " + value.Item2);
             }
+        }
+        
+        static void Exo3()
+        {
+            Player baptiste = new Player("Baptiste");
+            Player alexis = new Player("Alexis");
+
+            Player[] gamers = { baptiste, alexis };
+
+            Game monopoly = new Game(gamers);
+
+            monopoly.Game_Launch();
         }
     }
 }
